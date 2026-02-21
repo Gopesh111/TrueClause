@@ -45,7 +45,8 @@ with st.sidebar:
                 with st.spinner("Sending directly to the developer..."):
                     try:
                         # 🚀 DISCORD WEBHOOK SETUP
-                        DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1474638496995082250/T0ttZuYS4zIPX-a6iC0hccff6sJCafY3qvvKgpdn1DFzFKM0KvZuqbBRQKj6lQCs5Wex" 
+                        # 🚀 DISCORD WEBHOOK SETUP (SECURE)
+                        DISCORD_WEBHOOK_URL = st.secrets["DISCORD_WEBHOOK"]
                         payload = {
                             "username": "RedFlag Beta Tester", 
                             "content": f"🚨 **New Feedback from RedFlag.ai:**\n\n> {feedback_text}"
@@ -97,13 +98,13 @@ class ContractAnalysis(BaseModel):
 @st.cache_resource
 def get_gemini_llm():
     # 🚨 PRIMARY ENGINE (Gemini)
-    my_api_key = "GEMINI_API_KEY_" # Replace this with your actual Gemini Key for local testing
+    my_api_key = st.secrets["GEMINI_API_KEY"] # Replace this with your actual Gemini Key for local testing
     return ChatGoogleGenerativeAI(model="gemini-2.5-flash", temperature=0, google_api_key=my_api_key)
 
 @st.cache_resource
 def get_groq_llm():
     # 🚨 BACKUP ENGINE (Groq Llama-3)
-    my_groq_key = "_GROQ_API_KEY" # Replace this with your actual Groq Key for local testing
+    my_groq_key = st.secrets["GROQ_API_KEY"] # Replace this with your actual Groq Key for local testing
     return ChatGroq(model="llama3-70b-8192", temperature=0, groq_api_key=my_groq_key)
 
 def analyze_contract(text: str, rules_text: str, language: str) -> ContractAnalysis:
@@ -314,7 +315,7 @@ if "analysis_result" in st.session_state:
         st.subheader("✉️ Fix It For Me")
         st.info("Let our AI draft a polite email to negotiate these unfair terms.")
         if st.button("✨ Draft Negotiation Email"):
-            with st.spinner("Getting your mail ready... ✍️"):
+            with st.spinner("Channeling Harvey Specter... ✍️"):
                 try: 
                     st.session_state["email_draft"] = generate_email(analysis.risks, st.session_state["doc_type"])
                 except Exception as e:
