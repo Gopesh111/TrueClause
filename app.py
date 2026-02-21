@@ -315,7 +315,7 @@ if "analysis_result" in st.session_state:
         st.subheader("✉️ Fix It For Me")
         st.info("Let our AI draft a polite email to negotiate these unfair terms.")
         if st.button("✨ Draft Negotiation Email"):
-            with st.spinner("Channeling Harvey Specter... ✍️"):
+            with st.spinner("Drafting your email... ✍️"):
                 try: 
                     st.session_state["email_draft"] = generate_email(analysis.risks, st.session_state["doc_type"])
                 except Exception as e:
