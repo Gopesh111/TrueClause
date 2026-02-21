@@ -1,0 +1,16 @@
+# Streamlit Secrets (Yeh sabse zaroori line hai!)
+.streamlit/
+
+# Python compiled files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environments (Agar tune local mein banaya hai)
+venv/
+env/
+.env
+
+# OS generated files
+.DS_Store
+Thumbs.db
