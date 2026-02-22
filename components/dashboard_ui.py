@@ -75,4 +75,4 @@ def render_dashboard():
                 
     if "email_draft" in st.session_state:
         st.success("Draft Generated!")
-        st.text_area("Copy and send this to HR / Landlord:", value=st.session_state["email_draft"], height=250)
+        st.text_area("Copy and send ", value=st.session_state["email_draft"], height=250)
