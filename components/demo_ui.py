@@ -5,7 +5,7 @@ from core.backend import ContractAnalysis, RiskItem, SafeItem
 # 5. THE DEMO TAB UI
 # ==========================================
 def render_demo_tab():
-    st.info("⚡ Experience RedFlag.ai instantly with these pre-analyzed, real-world examples. (No API quota used)")
+    st.info("⚡ Experience RedFlag.ai instantly with these pre-analyzed, real-world examples.")
     
     col1, col2, col3 = st.columns(3)
     
