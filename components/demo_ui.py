@@ -40,7 +40,7 @@ def render_demo_tab():
             st.session_state["doc_type"] = "Rental / Lease Agreement"
 
     with col3:
-        if st.button("💻 Asymmetric Freelance Contract", use_container_width=True):
+        if st.button("💻 Freelance Contract", use_container_width=True):
             st.session_state["demo_text"] = "INDEPENDENT CONTRACTOR AGREEMENT\n\n1. The Contractor will operate as an independent contractor, not an employee.\n2. The Contractor will be paid strictly on a Net-90 days basis after invoice submission.\n3. The Contractor may not work with any other client in the software industry globally for a period of 5 years after project completion."
             st.session_state["analysis_result"] = ContractAnalysis(
                 risks=[
