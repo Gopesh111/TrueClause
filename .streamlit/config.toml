@@ -1,1 +1,18 @@
+[theme]
+# Force light mode for a clean, professional SaaS look
+base="light"
 
+# Corporate Trust Blue (Action buttons, highlights)
+primaryColor="#1E3A8A"
+
+# Very light slate/gray for the main background (Easy on the eyes)
+backgroundColor="#F8FAFC"
+
+# Pure white for sidebars and input areas
+secondaryBackgroundColor="#FFFFFF"
+
+# Dark slate text for high readability and premium feel
+textColor="#0F172A"
+
+# Modern font
+font="sans serif"
