@@ -9,6 +9,8 @@
 
 > "I Agree." These two words take 1 second to click, but can trap you in predatory contracts. RedFlag.ai is built to fix this information asymmetry.
 
+🔗 **[Live Application Link]** *(https://redflag-ai-yuj9psj4kzktvshqwnwcru.streamlit.app/)* 
+🎬 **[Watch the Demo Video]** *(https://drive.google.com/file/d/1oW73Wb_tIv_dEzhVSzSckd5jS99-kX9R/view?usp=sharing)* 
 
 ## ⚡ The Core Problem & Solution
 General AI models suffer from **Alert Fatigue**—they flag *everything* as a risk when analyzing legal documents. 
