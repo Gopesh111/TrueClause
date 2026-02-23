@@ -52,7 +52,7 @@ def render_analyze_tab():
                 st.warning("⚠️ We couldn't extract enough text from this PDF. It might be a scanned image. Please copy and paste the text manually below.")
             else:
                 user_text = extracted_text
-                st.success("PDF Text Extracted Successfully! Ready to audit.")
+                st.success("PDF Text Extracted Successfully! Ready for review.")
                 with st.expander("👁️ View Extracted Text"): 
                     st.text(user_text[:1000] + "... (truncated)")
         except Exception:
@@ -62,14 +62,15 @@ def render_analyze_tab():
     if not user_text:
         user_text = st.text_area("📝 Or Paste Contract Text Here", height=150, placeholder="Paste your text here...", on_change=clear_state)
     
-    if st.button("🚨 Audit My Contract", type="primary", use_container_width=True):
+    # Changed from 🚨 Audit to 🔍 Analyze for a professional SaaS vibe
+    if st.button("🔍 Analyze Agreement", type="primary", use_container_width=True):
         if len(user_text.split()) < 20:
             st.warning("⚠️ Please provide a bit more text. This doesn't look like a complete contract.")
         else:
-            with st.spinner("Auditing against industry baselines... 🕵️‍♂️"):
+            with st.spinner("Analyzing against industry standards... ⚙️"):
                 try:
                     st.session_state["analysis_result"] = analyze_contract(user_text, rule_mapping[doc_type], language)
                     st.session_state["doc_type"] = doc_type 
                 except Exception:
                     # GRACEFUL HANDLING: No raw errors, just a polite message
-                    st.warning("⚠️ Our AI engines are experiencing unusually high traffic right now. Please try clicking 'Audit' again in a few seconds!")
+                    st.warning("⚠️ Our AI engines are experiencing unusually high traffic right now. Please try clicking 'Analyze' again in a few seconds!")
