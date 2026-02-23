@@ -52,7 +52,7 @@ def render_demo_tab():
             toggle_demo_state("Rental / Lease Agreement", text, analysis)
 
     with col3:
-        if st.button("💻 Asymmetric Freelance Contract", use_container_width=True):
+        if st.button("💻 Freelance Contract", use_container_width=True):
             analysis = ContractAnalysis(
                 risks=[
                     RiskItem(clause_text="paid strictly on a Net-90 days basis", risk_level="MEDIUM", category="Financial", baseline="Net-15 to Net-30 days is standard for freelancers.", deviation="Client is holding your money for 3 months interest-free.", suggestion="Negotiate Net-15 or Net-30 payment terms."),
