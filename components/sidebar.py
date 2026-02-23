@@ -28,5 +28,6 @@ def render_sidebar():
                             if response.status_code in [200, 204]:
                                 st.success("Feedback received! Thanks for helping us improve TrueClause.")
                         except Exception as e:
-                            # GRACEFUL HANDLING: Catching webhook errors politely
-                            st.error("We couldn't connect to our servers right now. Please try again later.")
+                            # Asli error screen par print karwao
+                            st.error(f"System Error: {str(e)}")
+                            # st.error("We couldn't connect to our servers right now. Please try again later.")
