@@ -5,12 +5,12 @@ from core.backend import ContractAnalysis, RiskItem, SafeItem
 # 5. THE DEMO TAB UI
 # ==========================================
 def render_demo_tab():
-    st.info("⚡ Experience RedFlag.ai instantly with these pre-analyzed, real-world examples.")
+    st.info("⚡ Experience TrueClause instantly with these pre-analyzed, real-world examples.")
     
     col1, col2, col3 = st.columns(3)
     
     with col1:
-        if st.button("💼 Toxic Job Offer", use_container_width=True):
+        if st.button("💼 Restrictive Job Offer", use_container_width=True):
             st.session_state["demo_text"] = "EMPLOYMENT AGREEMENT\n\n1. The employee shall be on a standard probation period of 6 months.\n2. The Company reserves the right to terminate the employee immediately without notice, while the employee must serve a 90-day notice period if they wish to resign.\n3. The Employee agrees to pay a training recovery fee of ₹3,00,000 if they leave within the first 2 years of service.\n4. The employee is bound by a standard confidentiality agreement (NDA) during and after employment."
             st.session_state["analysis_result"] = ContractAnalysis(
                 risks=[
@@ -25,7 +25,7 @@ def render_demo_tab():
             st.session_state["doc_type"] = "Employment / Job Offer"
 
     with col2:
-        if st.button("🏠 Shady Rent Agreement", use_container_width=True):
+        if st.button("🏠 Unfair Lease Agreement", use_container_width=True):
             st.session_state["demo_text"] = "LEASE AGREEMENT\n\n1. The Tenant shall pay a security deposit of ₹1,00,000.\n2. The Landlord reserves the right to automatically deduct 50% of the security deposit for 'standard repainting and deep cleaning' upon vacating, regardless of the flat's actual condition.\n3. The Tenant must give 2 months' notice to vacate, but the Landlord can evict the Tenant with 24 hours' notice.\n4. The Tenant is allowed to use the premises for residential purposes only."
             st.session_state["analysis_result"] = ContractAnalysis(
                 risks=[
@@ -40,7 +40,7 @@ def render_demo_tab():
             st.session_state["doc_type"] = "Rental / Lease Agreement"
 
     with col3:
-        if st.button("💻 Freelance Trap", use_container_width=True):
+        if st.button("💻 Asymmetric Freelance Contract", use_container_width=True):
             st.session_state["demo_text"] = "INDEPENDENT CONTRACTOR AGREEMENT\n\n1. The Contractor will operate as an independent contractor, not an employee.\n2. The Contractor will be paid strictly on a Net-90 days basis after invoice submission.\n3. The Contractor may not work with any other client in the software industry globally for a period of 5 years after project completion."
             st.session_state["analysis_result"] = ContractAnalysis(
                 risks=[
@@ -57,5 +57,5 @@ def render_demo_tab():
     if "demo_text" in st.session_state:
         st.markdown("<br>", unsafe_allow_html=True)
         with st.expander("👁️ View the Contract Text being analyzed", expanded=False):
-            st.info("This is the exact text RedFlag.ai is analyzing in the background.")
+            st.info("This is the exact text TrueClause is analyzing in the background.")
             st.text(st.session_state["demo_text"])
